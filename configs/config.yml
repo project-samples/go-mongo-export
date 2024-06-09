@@ -1,0 +1,10 @@
+mongo:
+  uri: mongodb+srv://dbUser:Demoaccount1@projectdemo.g0lah.mongodb.net
+  database: masterdata
+
+log:
+  level: info
+  output: logs/app_log-%Y-%m-%d.log
+  map:
+    time: "@timestamp"
+    msg: message
