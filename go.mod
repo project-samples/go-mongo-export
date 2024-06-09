@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/core-go/config v1.0.1
-	github.com/core-go/io v0.2.7
+	github.com/core-go/io v1.0.0
 	github.com/core-go/log v0.1.2
 	github.com/core-go/mongo v0.5.4
 	go.mongodb.org/mongo-driver v1.15.0
