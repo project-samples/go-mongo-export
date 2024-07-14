@@ -1,10 +1,7 @@
 package app
 
-import "github.com/core-go/log/zap"
-
 type Config struct {
 	Mongo MongoConfig `mapstructure:"mongo"`
-	Log   log.Config  `mapstructure:"log"`
 }
 type MongoConfig struct {
 	Uri      string `yaml:"uri" mapstructure:"uri" json:"uri,omitempty" gorm:"column:uri" bson:"uri,omitempty" dynamodbav:"uri,omitempty" firestore:"uri,omitempty"`
