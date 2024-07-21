@@ -24,7 +24,7 @@ func NewApp(ctx context.Context, cfg Config) (*ApplicationContext, error) {
 	if err != nil {
 		return nil, err
 	}
-	formatter, err := f.NewFixedLengthFormatter[User]()
+	transformer, err := f.NewFixedLengthTransformer[User]()
 	if err != nil {
 		return nil, err
 	}
@@ -32,7 +32,7 @@ func NewApp(ctx context.Context, cfg Config) (*ApplicationContext, error) {
 	if err != nil {
 		return nil, err
 	}
-	exporter := export.NewExporter(db.Collection("userimport"), BuildQuery, formatter.Format, writer.Write, writer.Close)
+	exporter := export.NewExporter(db.Collection("userimport"), BuildQuery, transformer.Transform, writer.Write, writer.Close)
 	return &ApplicationContext{
 		Export: exporter.Export,
 	}, nil
