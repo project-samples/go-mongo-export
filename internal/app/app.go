@@ -9,7 +9,6 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 
-	f "github.com/core-go/io/formatter"
 	w "github.com/core-go/io/writer"
 	export "github.com/core-go/mongo/export"
 )
@@ -24,7 +23,7 @@ func NewApp(ctx context.Context, cfg Config) (*ApplicationContext, error) {
 	if err != nil {
 		return nil, err
 	}
-	transformer, err := f.NewFixedLengthTransformer[User]()
+	transformer, err := w.NewFixedLengthTransformer[User]()
 	if err != nil {
 		return nil, err
 	}
